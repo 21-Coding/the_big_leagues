@@ -24,10 +24,10 @@ Things you may want to cover:
 * ...
 
 
-commands Travis used to roll back rails version on computer:
-which ruby
-atom ~/.bash_profile
-. ~/.bash_profile
-rails -v
-gem uninstall rails -v 6.0.2.1
-gem uninstall railties
+#commands Travis used to roll back rails version on computer:
+* `which ruby`
+* `atom ~/.bash_profile`
+* `. ~/.bash_profile`
+* `rails -v`
+* `gem uninstall rails -v 6.0.2.1`
+* `gem uninstall railties`
