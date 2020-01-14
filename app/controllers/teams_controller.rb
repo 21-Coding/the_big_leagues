@@ -1,33 +1,56 @@
-class AlbumsController < ApplicationController
+class TeamsController < ApplicationController
 
   def index
-    @albums = Album.all
+    @teams = Team.all
    render :index
-    # Code for listing all albums goes here.
+    # Code for listing all teams goes here.
   end
 
   def new
-    # Code for new album form goes here.
+    @team = Team.new
+    render :new
+    # Code for new team form goes here.
   end
 
   def create
-    # Code for creating a new album goes here.
+    @team = Team.new(team_params)
+    if @team.save
+      redirect_to teams_path
+    else
+      render :new
+    end
+    # Code for creating a new team goes here.
   end
 
+
   def edit
+    @team = Team.find(params[:id])
+    render :edit
     # Code for edit album form goes here.
   end
 
   def show
+    @team = Team.find(params[:id])
+    render :show
     # Code for showing a single album goes here.
   end
 
   def update
+    @team = Team.find(params[:id])
+    if @team.update(team_params)
+      redirect_to teams_path
+    else
+      render :edit
+    end
     # Code for updating an album goes here.
   end
 
   def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    redirect_to teams_path
     # Code for deleting an album goes here.
   end
+
 
 end
