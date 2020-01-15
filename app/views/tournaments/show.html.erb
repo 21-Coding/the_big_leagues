@@ -1,0 +1,10 @@
+<h1>Tournament: <%= @tournament.name %></h1>
+<h2>Team: <%= @team.name %></h2>
+<h3><%= @tournament.lyrics %></h3>
+
+<p><%= link_to "Edit tournament", edit_team_song_path(@team, @tournament) %></p>
+<p><%= link_to "Delete tournament", team_tournament_path(@team, @tournament),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to team", team_path(@team) %></p>

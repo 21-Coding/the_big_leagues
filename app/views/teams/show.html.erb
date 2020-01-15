@@ -1,8 +1,25 @@
 <h1><%= @team.name %></h1>
 <h3><%= @team.genre %></h3>
 
+<% if @team.tournaments.any? %>
+  <h4>Here are the tournaments for this team:</h4>
+
+  <% @team.tournaments.each do |tournament| %>
+    <ul>
+      <li>
+        <%= link_to tournament.name, team_tournament_path(@team, tournament) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No tournaments are listed for this team.</p>
+<% end %>
+
+<p><%= link_to "Add a tournament", new_team_tournament_path(@team) %></p>
+
+
 <p><%= link_to "Edit", edit_team_path(@team) %></p>
-<p><%= link_to "Delete", album_path(@team),
+<p><%= link_to "Delete", team_path(@team),
   :data => {:confirm => "You sure?",
   :method => "delete"} %></p>
 

@@ -1,0 +1,9 @@
+<h1>Add a new tournaments:</h1>
+
+<%= form_for [@team, @tournaments] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :lyrics %>
+  <%= f.text_area :lyrics %>
+  <p><%= f.submit %></p>
+<% end %>

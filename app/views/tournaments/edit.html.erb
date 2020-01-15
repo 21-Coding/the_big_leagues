@@ -1,0 +1,9 @@
+<h1>Edit tournament:</h1>
+
+<%= form_for [@team, @tournament] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :coordinator %>
+  <%= f.text_area :coordinator %>
+  <p><%= f.submit %></p>
+<% end %>
